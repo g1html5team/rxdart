@@ -75,6 +75,9 @@ class BehaviorSubject<T> extends Subject<T> {
   void onAdd(T event) {
     _wrapper.latestValue = event;
   }
+
+  /// Synchronously get the latest value emitted by Subject. May be null.
+  T get value => _wrapper.latestValue;
 }
 
 class _Wrapper<T> {
